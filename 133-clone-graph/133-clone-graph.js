@@ -15,7 +15,7 @@ var cloneGraph = function(node) {
     const map  = new Map([[node, new Node(node.val)]]);
     let q = [node];
     while(q.length) {
-        const v = q.shift();
+        const v = q.pop();
         v.neighbors.forEach((n, i)=> {
             if(!map.has(n)) {
                 map.set(n, new Node(n.val));
