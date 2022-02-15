@@ -11,5 +11,5 @@ var twoSum = function(nums, target) {
     } else {
       indices.set(nums[i], i);
     }
-  }
+  }   
 };
