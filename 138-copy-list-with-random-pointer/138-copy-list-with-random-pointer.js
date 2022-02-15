@@ -12,16 +12,16 @@
  * @return {Node}
  */
 var copyRandomList = function(head) {
-    let map = new Map([[null, null]]);
+    const map = new Map([[null, null]]);
     let curr = head;
     while(curr) {
-        let copy =  new Node(curr.val);
+        const copy = new Node(curr.val);
         map.set(curr, copy);
         curr = curr.next;
     }
     curr = head;
     while(curr) {
-        let copy = map.get(curr);
+        const copy = map.get(curr);
         copy.next = map.get(curr.next);
         copy.random = map.get(curr.random);
         curr = curr.next;
