@@ -15,10 +15,12 @@ var buildTree = function(preorder, inorder) {
     const map = new Map();
     //Keep track of indices of vals in preorder
     inorder.forEach((e,i)=>map.set(e,i));
+    let idx = 0;
     function recurse(start, end) {
         if(start > end) return null;
         //Remove first preorder element and create a "root" node with it
-        const root = new TreeNode(preorder.shift());
+        const root = new TreeNode(preorder[idx]);
+        idx++;
         //Its left child contains the nodes between the current start and inorder index of root's val -1
         root.left = recurse(start, map.get(root.val)-1);
         //Its right child contains the nodes between the inorder index of rootval + 1 and the current end
