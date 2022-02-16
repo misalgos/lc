@@ -17,7 +17,7 @@ var buildTree = function(preorder, inorder) {
         map.set(e, i);
     });
     function build(start, end) {
-        if(start > end) return null;
+        if(start > end )  return null;
         let root = new TreeNode(preorder.shift());
         root.left = build(start, map.get(root.val)-1);
         root.right = build(map.get(root.val)+1, end);
