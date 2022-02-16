@@ -16,9 +16,11 @@ var buildTree = function(preorder, inorder) {
     inorder.forEach((e,i)=> {
         map.set(e, i);
     });
+    let idx = 0;
     function build(start, end) {
         if(start > end )  return null;
-        let root = new TreeNode(preorder.shift());
+        let root = new TreeNode(preorder[idx]);
+        idx++;                        
         root.left = build(start, map.get(root.val)-1);
         root.right = build(map.get(root.val)+1, end);
         return root;
