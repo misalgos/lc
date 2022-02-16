@@ -15,7 +15,7 @@ var buildTree = function(preorder, inorder) {
     const map = new Map();
     //Keep track of indices of vals in preorder
     inorder.forEach((e,i)=>map.set(e,i));
-    let idx = 0;
+    let idx = 0;//Index to keep track of the current root node from the preorder list.
     function recurse(start, end) {
         if(start > end) return null;
         //Remove first preorder element and create a "root" node with it
